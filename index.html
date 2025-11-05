@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-camera-retro"></i>
+                <h1>Gallery</h1>
+            </div>
+            <div class="nav-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> All
+                </button>
+                <button class="filter-btn" data-filter="nature">
+                    <i class="fas fa-leaf"></i> Nature
+                </button>
+                <button class="filter-btn" data-filter="architecture">
+                    <i class="fas fa-building"></i> Architecture
+                </button>
+                <button class="filter-btn" data-filter="people">
+                    <i class="fas fa-users"></i> People
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="gallery" id="gallery">
+            <!-- Images will be dynamically added via JavaScript for lazy loading -->
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption" aria-describedby="lightbox-index">
+        <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+        <button class="lightbox-prev" aria-label="Previous image">&larr;</button>
+        <button class="lightbox-next" aria-label="Next image">&rarr;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="" loading="lazy">
+            <div class="lightbox-info">
+                <p id="lightbox-caption"></p>
+                <p id="lightbox-index"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
